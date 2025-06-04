@@ -10,8 +10,10 @@ import { Canzoni } from '../models/song.model';
 })
 export class SongListComponent {
   @Input() canz! : Canzoni
+  @Input() det! : Canzoni[]
   
   dettagli(){
+    this.det.push(new Canzoni(this.canz.data_uscita, this.canz.durata, this.canz.title))
     console.log(" Titolo: " + this.canz.title + " Data uscita: " + this.canz.data_uscita + " Durata: " + this.canz.durata)
   }
 

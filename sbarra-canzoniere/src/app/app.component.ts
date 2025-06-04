@@ -4,11 +4,12 @@ import { RouterOutlet } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Canzoni } from './models/song.model';
 import { SongListComponent } from './song-list/song-list.component';
+import { DettagliAlbumComponent } from './dettagli-album/dettagli-album.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, SongListComponent],
+  imports: [RouterOutlet, SongListComponent, DettagliAlbumComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -19,6 +20,7 @@ export class AppComponent implements OnInit{
    obs! :Observable<Canzoni[]>;
    http : HttpClient
    vettCanzoni : Canzoni[] = []
+   vettDet : Canzoni[] = []
 
    constructor(http : HttpClient){this.http = http}
 
